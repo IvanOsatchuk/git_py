@@ -10,7 +10,9 @@ def teste():
 def git_call(msg, branch):
     os.system(f"git checkout -b {branch}")
     os.system(f"git commit -m '{msg}' -a")
-    os.system("git push")
+    os.system(f"git push --set-upstream origin {branch}")
+    
+    
 
 # Write the pipelline config out to a file
 def exportPipeline(ns, id, data):
