@@ -1,5 +1,5 @@
 pipeline:
-  dataops_tb_test
+  teste
 namespace: 
   DataOps
 pipeline_vars_dev:
