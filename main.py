@@ -8,6 +8,7 @@ def teste():
     print('hello')
 
 def git_call(msg, branch):
+    os.system(f"git pull")
     os.system(f"git checkout -b {branch}")
     os.system(f"git commit -m '{msg}' -a")
     os.system(f"git push --set-upstream origin {branch}")
