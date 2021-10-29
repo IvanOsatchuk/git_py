@@ -34,7 +34,7 @@ def write_config_file(data, namespace):
 
 url = "https://datafusion-gb-dev-data-tools-developer-dot-use1.datafusion.googleusercontent.com/api/v3/"
 headers = {
-    "Authorization": "Bearer ya29.a0ARrdaM-KK7aNbeY10DpJNbDHwiY-yOGaZUT86_FLQ3q9yOq8ix_TtC-usWkE50o0DOfVGu723hbBBUeqrZzPZp1ClaWXpeP-CoqwTktvztDDg6ASF8MRc1DzdQKFsjlzaRIeRZVi5otAiU85Icyqq1mVEQYFf4zXPKcJmozSznzPlk9-_n8IHR7qJEcQ_GHPYuP5VyoCnQgpyR4pgaGwYALfSDjLOG45xkHWK8MuQjRh5sQmBPWCrnPDK82Ji00Yw_qinm8",
+    "Authorization": "Bearer ya29.a0ARrdaM-hFK3P_3AGGKzk7S0nASaiQuwawJf94w2JrzejymUL8SZm9cQjmO8Mup-EaDKDoxDdVZZEgDOqlcY80Uh_sYP28BUTlIG3A60zOLEzWeyPXHYOiIwnri0VQ8qB-nLPJpHdRYDNnZ06ZbH9nfCXBGgGh_j5fwUITrSJ1xfiyGMExKHDJ62SCnTNGt4UNlObb8sC3e-IXFa9h5S6478gzeUZCCXQOIpNDa-U8hgLDDiW9jnCXytYfYoSfgID0i_HBKc",
     "Content-Type": "application/json",
 }
 r = requests.get(url, headers=headers)
