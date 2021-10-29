@@ -4,6 +4,12 @@ import os
 import requests
 import yaml
 
+def teste():
+    print('hello')
+
+def git_call(msg):
+    os.system(f"git commit -m '{msg}' -a")
+    os.system("git push")
 
 # Write the pipelline config out to a file
 def exportPipeline(ns, id, data):
