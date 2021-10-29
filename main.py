@@ -28,9 +28,9 @@ def exportPipeline(ns, id, data):
         f.write(data)
 
 
-def write_config_file(data, namespace):
+def write_config_file(data, namespace, pipeline):
     fileName = "config.yaml"
-    directory = "datafusion/" + namespace
+    directory = "./datafusion/" + namespace +'/'+ pipeline
     path = directory + "/" + fileName
 
     d = data.get("pipeline_vars_dev")
@@ -38,13 +38,17 @@ def write_config_file(data, namespace):
 
     data = yaml.dump(dic, default_flow_style=False)
     
+    #path.mkdir(parents=True, exist_ok=True)
+    if not os.path.exists(directory):
+        os.makedirs(directory, mode=755)
+    
     with open(path, "w") as f:
         f.write(data)
 
 
 url = "https://datafusion-gb-dev-data-tools-developer-dot-use1.datafusion.googleusercontent.com/api/v3/"
 headers = {
-    "Authorization": "Bearer ya29.a0ARrdaM-hFK3P_3AGGKzk7S0nASaiQuwawJf94w2JrzejymUL8SZm9cQjmO8Mup-EaDKDoxDdVZZEgDOqlcY80Uh_sYP28BUTlIG3A60zOLEzWeyPXHYOiIwnri0VQ8qB-nLPJpHdRYDNnZ06ZbH9nfCXBGgGh_j5fwUITrSJ1xfiyGMExKHDJ62SCnTNGt4UNlObb8sC3e-IXFa9h5S6478gzeUZCCXQOIpNDa-U8hgLDDiW9jnCXytYfYoSfgID0i_HBKc",
+    "Authorization": "Bearer ya29.a0ARrdaM9ppHEABuyvkIiDuhf4MrtQRgKHYLosFRHrZ11B-S3IP8x4_gTbW-W-RndE3dwNctZgTudt3LWrUpJ219FpWtP3RmNFg6nm8wadtP7L1vcusRZ1C4j-vyqI8qBzb4ojeSPz-4lF_O-UjtdJ4eHGFr7D7EKx8tj1_Xv_tiDY5JtUZ5yYHk01fuesYXi0Bs51SejaBuRPmSmuT40FKZaEsWL7B8mLrI83NHEp960RG7OKdzy07P5X86fK8PXDkYqkwbE",
     "Content-Type": "application/json",
 }
 r = requests.get(url, headers=headers)
@@ -75,4 +79,4 @@ p["config"] = json.loads(pipe.get("configuration"))
 spec = json.dumps(p, sort_keys=True, indent=4)
 
 exportPipeline(namespace_name, pipeline_name, spec)
-write_config_file(data, namespace_name)
+write_config_file(data, namespace_name, pipeline_name)
