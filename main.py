@@ -8,7 +8,7 @@ def teste():
     print('hello')
 
 def git_call(msg, branch):
-    os.system(f"git checkout -b {branch} '{msg}' -a")
+    os.system(f"git checkout -b {branch}")
     os.system(f"git commit -m '{msg}' -a")
     os.system("git push")
 
